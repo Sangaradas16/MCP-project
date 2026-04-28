@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Expense Tracker</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Local Expense Tracking & Financial Assistant</h1>
+        <p>Track spending, analyze categories, forecast monthly expenses, and chat with the assistant.</p>
+    </header>
+
+    <main>
+        <section class="panel grid-2">
+            <div class="card">
+                <h2>Add / Update Expense</h2>
+                <form id="expense-form">
+                    <input type="hidden" id="expense-id" />
+                    <label>Description</label>
+                    <input id="description" type="text" placeholder="Groceries, rent, transport" required />
+                    <label>Category</label>
+                    <input id="category" type="text" placeholder="Food, Utilities, Health" required />
+                    <label>Amount</label>
+                    <input id="amount" type="number" step="0.01" min="0" placeholder="0.00" required />
+                    <label>Date</label>
+                    <input id="date" type="date" required />
+                    <div class="actions">
+                        <button type="submit">Save Expense</button>
+                        <button type="button" id="clear-button" class="secondary">Clear</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card">
+                <h2>Expense Chat Assistant</h2>
+                <div class="chat-box" id="chat-box"></div>
+                <form id="chat-form">
+                    <input id="chat-input" type="text" placeholder="Ask about trends, predictions, or your expenses" required />
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Expense List</h2>
+            <div class="table-actions">
+                <button id="refresh-expenses">Refresh List</button>
+            </div>
+            <div class="table-wrapper">
+                <table id="expenses-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel grid-2">
+            <div class="card">
+                <h2>Category Analytics</h2>
+                <div id="analytics-summary"></div>
+                <canvas id="category-chart" width="600" height="320"></canvas>
+            </div>
+            <div class="card">
+                <h2>Monthly Trend</h2>
+                <div id="trend-summary"></div>
+                <canvas id="trend-chart" width="600" height="320"></canvas>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Forecast</h2>
+            <div class="forecast-panel" id="forecast-card"></div>
+        </section>
+
+    </main>
+
+    <script src="/static/app.js" defer></script>
+</body>
+</html>

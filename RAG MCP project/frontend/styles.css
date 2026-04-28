@@ -1,0 +1,184 @@
+body {
+    margin: 0;
+    font-family: Inter, system-ui, sans-serif;
+    background: #f3f6fb;
+    color: #1f2937;
+}
+
+header {
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    color: white;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+}
+
+header p {
+    margin: 0.75rem auto 0;
+    max-width: 740px;
+    opacity: 0.8;
+}
+
+main {
+    width: min(1200px, calc(100% - 2rem));
+    margin: 1.5rem auto 3rem;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.card {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+    padding: 1.5rem;
+}
+
+h2 {
+    margin-top: 0;
+    color: #111827;
+}
+
+.panel {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.35rem;
+    color: #4b5563;
+    font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 14px;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+button {
+    border: none;
+    border-radius: 14px;
+    background: #2563eb;
+    color: white;
+    padding: 0.95rem 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button.secondary {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    text-align: left;
+    color: #374151;
+    border-bottom: 2px solid #e5e7eb;
+    padding: 0.95rem 0.75rem;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+td {
+    padding: 0.95rem 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.table-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.chat-box {
+    min-height: 280px;
+    border: 1px solid #d1d5db;
+    border-radius: 18px;
+    padding: 1rem;
+    background: #f9fafb;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    overflow-y: auto;
+    max-height: 360px;
+}
+
+.chat-message {
+    padding: 0.95rem 1rem;
+    border-radius: 16px;
+    max-width: 95%;
+}
+
+.chat-message.user {
+    background: #2563eb;
+    color: white;
+    align-self: flex-end;
+}
+
+.chat-message.assistant {
+    background: #e5e7eb;
+    color: #111827;
+    align-self: flex-start;
+}
+
+#chat-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.forecast-panel {
+    display: grid;
+    gap: 0.75rem;
+    font-size: 1rem;
+    color: #374151;
+}
+
+.forecast-card {
+    padding: 1rem;
+    background: #f3f4f6;
+    border-radius: 18px;
+}
+
+@media (max-width: 700px) {
+    button, input[type="text"], input[type="number"], input[type="date"] {
+        width: 100%;
+    }
+    #chat-form {
+        grid-template-columns: 1fr;
+    }
+}
